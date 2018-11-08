@@ -147,6 +147,7 @@ public class WifiDelegate implements PluginRegistry.RequestPermissionsResultList
         String key = methodCall.argument("key");
         List<String> wifiList = new ArrayList<>();
         if (wifiManager != null) {
+            wifiManager.startScan();
             List<ScanResult> scanResultList = wifiManager.getScanResults();
             for (ScanResult scanResult : scanResultList) {
                 if (key.isEmpty()) {
